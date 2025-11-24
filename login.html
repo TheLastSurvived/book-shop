@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход | Книжный магазин "Читай-Город"</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <i class="bi bi-book-half me-2"></i>Читай-Город
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Новинки</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Бестселлеры</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Акции</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О нас</a>
+            </li>
+          </ul>
+          <form class="d-flex me-3">
+            <div class="input-group">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Поиск книг"
+              />
+              <button class="btn btn-outline-light" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">
+                <i class="bi bi-cart3 me-1"></i> Корзина
+                <span class="badge bg-danger ms-1">3</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <i class="bi bi-person-circle me-1"></i> Личный кабинет
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="login.html">
+                <i class="bi bi-person me-1"></i> Войти
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <div class="auth-container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-5">
+            <div class="auth-card">
+              <div class="auth-header">
+                <h2><i class="bi bi-person-circle me-2"></i>Вход в аккаунт</h2>
+              </div>
+              <div class="auth-body">
+                <form class="auth-form">
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email адрес</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Введите ваш email"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password" class="form-label">Пароль</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Введите ваш пароль"
+                      required
+                    />
+                  </div>
+
+                  <button type="submit" class="btn auth-btn mb-3">Войти</button>
+
+                  <div class="auth-links">
+                    <a href="register.html">Нет аккаунта? Зарегистрируйтесь</a
+                    ><br />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-links">
+              <h5>Книжный магазин "Читай-Город"</h5>
+              <p>
+                Мы предлагаем широкий выбор книг различных жанров для всех
+                возрастов. Наша миссия - делать чтение доступным и приятным для
+                каждого.
+              </p>
+              <div class="social-links mt-4">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-links">
+              <h5>Магазин</h5>
+              <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="catalog.html">Новинки</a></li>
+                <li><a href="catalog.html">Бестселлеры</a></li>
+                <li><a href="catalog.html">Акции</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h5>Помощь</h5>
+              <ul>
+                <li><a href="about.html">Доставка и оплата</a></li>
+                <li><a href="about.html">Возврат товара</a></li>
+                <li><a href="about.html">Частые вопросы</a></li>
+                <li><a href="about.html">Контакты</a></li>
+                <li><a href="about.html">О нас</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h5>Контакты</h5>
+              <ul>
+                <li>
+                  <i class="bi bi-geo-alt me-2"></i> г. Гродно, ул. Книжная, д.
+                  10
+                </li>
+                <li>
+                  <i class="bi bi-telephone me-2"></i> +375 (25) 456-78-90
+                </li>
+                <li>
+                  <i class="bi bi-envelope me-2"></i> info@chitai-gorod.ru
+                </li>
+              </ul>
+              <h5 class="mt-4">Подписка на новости</h5>
+              <div class="input-group mt-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Ваш email"
+                />
+                <button class="btn btn-primary" type="button">
+                  <i class="bi bi-send"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Книжный магазин "Читай-Город". Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

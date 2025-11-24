@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Книжный магазин "Читай-Город" | Каталог</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <i class="bi bi-book-half me-2"></i>Читай-Город
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="catalog.html">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Новинки</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Бестселлеры</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Акции</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О нас</a>
+            </li>
+          </ul>
+          <form class="d-flex me-3">
+            <div class="input-group">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Поиск книг"
+              />
+              <button class="btn btn-outline-light" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">
+                <i class="bi bi-cart3 me-1"></i> Корзина
+                <span class="badge bg-danger ms-1">3</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <i class="bi bi-person-circle me-1"></i> Личный кабинет
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">
+                <i class="bi bi-person me-1"></i> Войти
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Хлебные крошки -->
+    <section class="breadcrumb-section">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumb-item active">Каталог книг</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Заголовок каталога -->
+    <section class="catalog-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1 class="catalog-title">Каталог книг</h1>
+            <p class="catalog-subtitle">
+              Более 50 000 книг различных жанров и направлений
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="catalog-stats">
+              <span class="badge bg-primary">1,258 книг</span>
+              <span class="text-muted ms-2">в наличии</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Основной контент каталога -->
+    <section class="catalog-main">
+      <div class="container">
+        <div class="row">
+          <!-- Сайдбар с фильтрами -->
+
+          <div class="col-lg-3">
+            <div class="filter-sidebar">
+              <div class="filter-header">
+                <h5>Фильтры</h5>
+                <button
+                  class="btn btn-sm btn-outline-secondary"
+                  id="resetFilters"
+                >
+                  Сбросить
+                </button>
+              </div>
+
+              <!-- Фильтр по категориям -->
+              <div class="filter-group">
+                <h6>Категории</h6>
+                <div class="filter-options">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="category1"
+                      checked
+                    />
+                    <label class="form-check-label" for="category1"
+                      >Художественная литература</label
+                    >
+                    <span class="text-muted">(324)</span>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="category2"
+                    />
+                    <label class="form-check-label" for="category2"
+                      >Детективы</label
+                    >
+                    <span class="text-muted">(156)</span>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="category3"
+                    />
+                    <label class="form-check-label" for="category3"
+                      >Фантастика</label
+                    >
+                    <span class="text-muted">(278)</span>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="category4"
+                    />
+                    <label class="form-check-label" for="category4"
+                      >Бизнес-литература</label
+                    >
+                    <span class="text-muted">(89)</span>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="category5"
+                    />
+                    <label class="form-check-label" for="category5"
+                      >Детские книги</label
+                    >
+                    <span class="text-muted">(215)</span>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="category6"
+                    />
+                    <label class="form-check-label" for="category6"
+                      >Наука и образование</label
+                    >
+                    <span class="text-muted">(142)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Фильтр по специальным разделам -->
+              <div class="filter-group">
+                <h6>Разделы</h6>
+                <div class="filter-options">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="section-new"
+                    />
+                    <label class="form-check-label" for="section-new">
+                      <span class="badge bg-success me-2">Новинки</span>
+                      Новые поступления
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="section-bestseller"
+                    />
+                    <label class="form-check-label" for="section-bestseller">
+                      <span class="badge bg-warning me-2">Бестселлеры</span>
+                      Популярные книги
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="section-sale"
+                    />
+                    <label class="form-check-label" for="section-sale">
+                      <span class="badge bg-danger me-2">Акции</span>
+                      Скидки и спецпредложения
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Фильтр по цене -->
+              <div class="filter-group">
+                <h6>Цена, руб.</h6>
+                <div class="price-filter">
+                  <div class="row">
+                    <div class="col-6">
+                      <input
+                        type="number"
+                        class="form-control form-control-sm"
+                        placeholder="От"
+                        value="0"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <input
+                        type="number"
+                        class="form-control form-control-sm"
+                        placeholder="До"
+                        value="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <input
+                      type="range"
+                      class="form-range"
+                      min="0"
+                      max="200"
+                      step="5"
+                      value="100"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Фильтр по автору -->
+              <div class="filter-group">
+                <h6>Автор</h6>
+                <div class="filter-options">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="author1"
+                    />
+                    <label class="form-check-label" for="author1"
+                      >Анна Иванова</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="author2"
+                    />
+                    <label class="form-check-label" for="author2"
+                      >Петр Сидоров</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="author3"
+                    />
+                    <label class="form-check-label" for="author3"
+                      >Мария Козлова</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="author4"
+                    />
+                    <label class="form-check-label" for="author4"
+                      >Сергей Петров</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Фильтр по рейтингу -->
+              <div class="filter-group">
+                <h6>Рейтинг</h6>
+                <div class="filter-options">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="rating5"
+                    />
+                    <label class="form-check-label" for="rating5">
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="rating4"
+                    />
+                    <label class="form-check-label" for="rating4">
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star text-warning"></i> и выше
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="rating3"
+                    />
+                    <label class="form-check-label" for="rating3">
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star text-warning"></i>
+                      <i class="bi bi-star text-warning"></i> и выше
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Кнопка применения фильтров -->
+              <button class="btn btn-primary w-100 mt-3">
+                Применить фильтры
+              </button>
+            </div>
+          </div>
+
+          <!-- Основная область с книгами -->
+          <div class="col-lg-9">
+            <!-- Панель сортировки и отображения -->
+            <div class="catalog-toolbar mb-4">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="sorting-options">
+                    <label class="me-2">Сортировка:</label>
+                    <select class="form-select form-select-sm">
+                      <option selected>По популярности</option>
+                      <option>По цене (сначала дешевые)</option>
+                      <option>По цене (сначала дорогие)</option>
+                      <option>По новизне</option>
+                      <option>По рейтингу</option>
+                      <option>Новинки</option>
+                      <option>Бестселлеры</option>
+                      <option>Акции</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                  <div class="view-options">
+                    <span class="me-2">Вид:</span>
+                    <button
+                      class="btn btn-sm btn-outline-secondary active"
+                      id="gridView"
+                    >
+                      <i class="bi bi-grid-3x3-gap"></i>
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-secondary"
+                      id="listView"
+                    >
+                      <i class="bi bi-list"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Сетка книг -->
+            <div class="books-grid" id="booksContainer">
+              <!-- Книга 1 -->
+              <div class="book-card catalog-view">
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Загадочный сад" />
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                    <span class="text-muted ms-1">(128)</span>
+                  </div>
+                  <h5 class="card-title">Загадочный сад</h5>
+                  <p class="author text-muted">Анна Иванова</p>
+                  <p class="card-text text-truncate-2">
+                    Захватывающий роман о тайнах старого поместья
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">45 руб.</span>
+                      <small class="text-muted d-block"><s>60 руб.</s></small>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book">
+                      Просмотреть
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 2 -->
+              <div class="book-card catalog-view">
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Путешествие во времени" />
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <span class="text-muted ms-1">(94)</span>
+                  </div>
+                  <h5 class="card-title">Путешествие во времени</h5>
+                  <p class="author text-muted">Петр Сидоров</p>
+                  <p class="card-text text-truncate-2">
+                    Фантастический роман о приключениях во времени
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">52 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book">
+                      Просмотреть
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 3 -->
+              <div class="book-card catalog-view">
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Искусство переговоров" />
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span class="text-muted ms-1">(156)</span>
+                  </div>
+                  <h5 class="card-title">Искусство переговоров</h5>
+                  <p class="author text-muted">Мария Козлова</p>
+                  <p class="card-text text-truncate-2">
+                    Практическое руководство по эффективным переговорам
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">68 руб.</span>
+                      <small class="text-muted d-block"><s>85 руб.</s></small>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book">
+                      Просмотреть
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 4 -->
+              <div class="book-card catalog-view">
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Город теней" />
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                    <span class="text-muted ms-1">(203)</span>
+                  </div>
+                  <h5 class="card-title">Город теней</h5>
+                  <p class="author text-muted">Дмитрий Орлов</p>
+                  <p class="card-text text-truncate-2">
+                    Детективная история с неожиданной развязкой
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">59 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book">
+                      Просмотреть
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 5 -->
+              <div class="book-card catalog-view">
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Тайна старого замка" />
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                    <span class="text-muted ms-1">(128)</span>
+                  </div>
+                  <h5 class="card-title">Тайна старого замка</h5>
+                  <p class="author text-muted">Сергей Петров</p>
+                  <p class="card-text text-truncate-2">
+                    Детективная история с неожиданной развязкой
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">59 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book">
+                      Просмотреть
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 6 -->
+              <div class="book-card catalog-view">
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Путь к успеху" />
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <span class="text-muted ms-1">(94)</span>
+                  </div>
+                  <h5 class="card-title">Путь к успеху</h5>
+                  <p class="author text-muted">Алексей Воронов</p>
+                  <p class="card-text text-truncate-2">
+                    Мотивирующая книга о достижении целей
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">72 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book">
+                      Просмотреть
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 7 -->
+              <div class="book-card catalog-view">
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Город мечты" />
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span class="text-muted ms-1">(156)</span>
+                  </div>
+                  <h5 class="card-title">Город мечты</h5>
+                  <p class="author text-muted">Елена Смирнова</p>
+                  <p class="card-text text-truncate-2">
+                    Романтическая история о поиске себя
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">48 руб.</span>
+                      <small class="text-muted d-block"><s>65 руб.</s></small>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book">
+                      Просмотреть
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 8 -->
+              <div class="book-card catalog-view">
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Код вселенной" />
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                    <span class="text-muted ms-1">(203)</span>
+                  </div>
+                  <h5 class="card-title">Код вселенной</h5>
+                  <p class="author text-muted">Михаил Волков</p>
+                  <p class="card-text text-truncate-2">
+                    Научно-фантастический роман о загадках мироздания
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">65 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book">
+                      Просмотреть
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Пагинация -->
+            <nav aria-label="Page navigation" class="mt-5">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">Предыдущая</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Следующая</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-links">
+              <h5>Книжный магазин "Читай-Город"</h5>
+              <p>
+                Мы предлагаем широкий выбор книг различных жанров для всех
+                возрастов. Наша миссия - делать чтение доступным и приятным для
+                каждого.
+              </p>
+              <div class="social-links mt-4">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-links">
+              <h5>Магазин</h5>
+              <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="catalog.html">Новинки</a></li>
+                <li><a href="catalog.html">Бестселлеры</a></li>
+                <li><a href="catalog.html">Акции</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h5>Помощь</h5>
+              <ul>
+                <li><a href="about.html">Доставка и оплата</a></li>
+                <li><a href="about.html">Возврат товара</a></li>
+                <li><a href="about.html">Частые вопросы</a></li>
+                <li><a href="about.html">Контакты</a></li>
+                <li><a href="about.html">О нас</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h5>Контакты</h5>
+              <ul>
+                <li>
+                  <i class="bi bi-geo-alt me-2"></i> г. Гродно, ул. Книжная, д.
+                  10
+                </li>
+                <li>
+                  <i class="bi bi-telephone me-2"></i> +375 (25) 456-78-90
+                </li>
+                <li>
+                  <i class="bi bi-envelope me-2"></i> info@chitai-gorod.ru
+                </li>
+              </ul>
+              <h5 class="mt-4">Подписка на новости</h5>
+              <div class="input-group mt-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Ваш email"
+                />
+                <button class="btn btn-primary" type="button">
+                  <i class="bi bi-send"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Книжный магазин "Читай-Город". Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/catalog.js"></script>
+  </body>
+</html>

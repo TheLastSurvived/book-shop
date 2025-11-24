@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Книжный магазин "Читай-Город" | Главная</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <i class="bi bi-book-half me-2"></i>Читай-Город
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Новинки</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Бестселлеры</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Акции</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О нас</a>
+            </li>
+          </ul>
+          <form class="d-flex me-3">
+            <div class="input-group">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Поиск книг"
+              />
+              <button class="btn btn-outline-light" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">
+                <i class="bi bi-cart3 me-1"></i> Корзина
+                <span class="badge bg-danger ms-1">3</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <i class="bi bi-person-circle me-1"></i> Личный кабинет
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">
+                <i class="bi bi-person me-1"></i> Войти
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Герой-слайдер -->
+    <div
+      id="heroCarousel"
+      class="carousel slide hero-slider"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-caption">
+            <h1 class="fade-in-up">Откройте мир книг</h1>
+            <p class="fade-in-up">
+              Более 50 000 книг различных жанров. Найдите свою следующую любимую
+              книгу в нашем магазине.
+            </p>
+            <a href="catalog.html" class="btn btn-hero btn-lg fade-in-up"
+              >Смотреть каталог</a
+            >
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption">
+            <h1 class="fade-in-up">Новинки этого месяца</h1>
+            <p class="fade-in-up">
+              Самые ожидаемые книги уже в продаже. Успейте приобрести первыми!
+            </p>
+            <a href="catalog.html" class="btn btn-hero btn-lg fade-in-up"
+              >Смотреть новинки</a
+            >
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption">
+            <h1 class="fade-in-up">Скидки до 50%</h1>
+            <p class="fade-in-up">
+              Только до конца месяца специальные предложения на классику и
+              бестселлеры.
+            </p>
+            <a href="catalog.html" class="btn btn-hero btn-lg fade-in-up"
+              >Смотреть акции</a
+            >
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Предыдущий</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Следующий</span>
+      </button>
+    </div>
+
+    <!-- Популярные категории -->
+    <section class="section-light">
+      <div class="container">
+        <h2 class="section-title">Популярные категории</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="category-card">
+              <img
+                src="img/hud_lit.jpg"
+                class="card-img-top"
+                alt="Художественная литература"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Художественная литература</h5>
+                <p class="card-text">
+                  Романы, рассказы, поэзия и многое другое
+                </p>
+                <a href="catalog.html" class="btn btn-outline-primary"
+                  >Смотреть</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="category-card">
+              <img
+                src="img/detektiv.jpg"
+                class="card-img-top"
+                alt="Детективы"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Детективы</h5>
+                <p class="card-text">
+                  Захватывающие истории и головоломки и многое другое
+                </p>
+                <a href="catalog.html" class="btn btn-outline-primary"
+                  >Смотреть</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="category-card">
+              <img
+                src="img/fantastic.jpg"
+                class="card-img-top"
+                alt="Фантастика"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Фантастика</h5>
+                <p class="card-text">
+                  Миры будущего и альтернативные реальности
+                </p>
+                <a href="catalog.html" class="btn btn-outline-primary"
+                  >Смотреть</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="category-card">
+              <img
+                src="img/busines.jpg"
+                class="card-img-top"
+                alt="Бизнес-литература"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Бизнес-литература</h5>
+                <p class="card-text">
+                  Книги для саморазвития, успеха в карьере, бизнесе
+                </p>
+                <a href="catalog.html" class="btn btn-outline-primary"
+                  >Смотреть</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Новинки -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Новинки</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="book-card">
+              <img
+                src="img/book.jpg"
+                class="card-img-top"
+                alt="Загадочный сад"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Загадочный сад</h5>
+                <p class="author">Анна Иванова</p>
+                <p class="card-text">
+                  Захватывающий роман о тайнах старого поместья
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <span class="price">45 руб.</span>
+                  <a href="book-details.html" class="btn btn-book">
+                    Просмотреть
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="book-card">
+              <img
+                src="img/book.jpg"
+                class="card-img-top"
+                alt="Путешествие во времени"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Путешествие во времени</h5>
+                <p class="author">Петр Сидоров</p>
+                <p class="card-text">
+                  Фантастический роман о приключениях во времени
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <span class="price">52 руб.</span>
+                  <a href="book-details.html" class="btn btn-book">
+                    Просмотреть
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="book-card">
+              <img
+                src="img/book.jpg"
+                class="card-img-top"
+                alt="Искусство переговоров"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Искусство переговоров</h5>
+                <p class="author">Мария Козлова</p>
+                <p class="card-text">
+                  Практическое руководство по эффективным переговорам
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <span class="price">68 руб.</span>
+                  <a href="book-details.html" class="btn btn-book">
+                    Просмотреть
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="book-card">
+              <img src="img/book.jpg" class="card-img-top" alt="Город теней" />
+              <div class="card-body">
+                <h5 class="card-title">Город теней</h5>
+                <p class="author">Дмитрий Орлов</p>
+                <p class="card-text">
+                  Детективная история с неожиданной развязкой
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <span class="price">59 руб.</span>
+                  <a href="book-details.html" class="btn btn-book">
+                    Просмотреть
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="section-title mb-0">Бестселлеры</h2>
+          <a href="catalog.html" class="btn btn-outline-primary"
+            >Все бестселлеры <i class="bi bi-arrow-right ms-1"></i
+          ></a>
+        </div>
+
+        <div class="row g-4">
+          <!-- Книга 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="bestseller-card">
+              <div class="bestseller-badge">
+                <i class="bi bi-trophy-fill me-1"></i> №1
+              </div>
+              <div class="book-cover">
+                <img src="img/book.jpg" alt="Тайна старого замка" />
+              </div>
+              <div class="card-body">
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i>
+                  <span class="text-muted ms-1">(128)</span>
+                </div>
+                <h5 class="card-title">Тайна старого замка</h5>
+                <p class="author text-muted">Сергей Петров</p>
+                <p class="card-text text-truncate-2">
+                  Детективная история с неожиданной развязкой. Захватывающий
+                  сюжет не отпустит до последней страницы.
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <div>
+                    <span class="price">59 руб.</span>
+                  </div>
+                  <a href="book-details.html" class="btn btn-book">
+                    Просмотреть
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Книга 2 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="bestseller-card">
+              <div class="bestseller-badge">
+                <i class="bi bi-award me-1"></i> №2
+              </div>
+              <div class="book-cover">
+                <img src="img/book.jpg" alt="Путь к успеху" />
+              </div>
+              <div class="card-body">
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star text-warning"></i>
+                  <span class="text-muted ms-1">(94)</span>
+                </div>
+                <h5 class="card-title">Путь к успеху</h5>
+                <p class="author text-muted">Алексей Воронов</p>
+                <p class="card-text text-truncate-2">
+                  Мотивирующая книга о достижении целей. Практические советы и
+                  вдохновляющие истории успеха.
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <div>
+                    <span class="price">72 руб.</span>
+                  </div>
+                  <a href="book-details.html" class="btn btn-book">
+                    Просмотреть
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Книга 3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="bestseller-card">
+              <div class="bestseller-badge">
+                <i class="bi bi-award me-1"></i> №3
+              </div>
+              <div class="book-cover">
+                <img src="img/book.jpg" alt="Город мечты" />
+              </div>
+              <div class="card-body">
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <span class="text-muted ms-1">(156)</span>
+                </div>
+                <h5 class="card-title">Город мечты</h5>
+                <p class="author text-muted">Елена Смирнова</p>
+                <p class="card-text text-truncate-2">
+                  Романтическая история о поиске себя и настоящей любви в
+                  большом городе.
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <div>
+                    <span class="price">48 руб.</span>
+                  </div>
+                  <a href="book-details.html" class="btn btn-book">
+                    Просмотреть
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Книга 4 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="bestseller-card">
+              <div class="bestseller-badge">
+                <i class="bi bi-award me-1"></i> №4
+              </div>
+              <div class="book-cover">
+                <img src="img/book.jpg" alt="Код вселенной" />
+              </div>
+              <div class="card-body">
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i>
+                  <span class="text-muted ms-1">(203)</span>
+                </div>
+                <h5 class="card-title">Код вселенной</h5>
+                <p class="author text-muted">Михаил Волков</p>
+                <p class="card-text text-truncate-2">
+                  Научно-фантастический роман о загадках мироздания и будущем
+                  человечества.
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <div>
+                    <span class="price">65 руб.</span>
+                  </div>
+                  <a href="book-details.html" class="btn btn-book">
+                    Просмотреть
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Статистика бестселлеров -->
+        <div class="row mt-5 pt-4">
+          <div class="col-12">
+            <div class="stats-section bg-white rounded-3 p-4 shadow-sm">
+              <div class="row text-center">
+                <div class="col-md-3 mb-3">
+                  <div class="stat-item">
+                    <h3 class="text-primary mb-1">1,250+</h3>
+                    <p class="text-muted mb-0">Продано бестселлеров</p>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div class="stat-item">
+                    <h3 class="text-primary mb-1">4.8/5</h3>
+                    <p class="text-muted mb-0">Средняя оценка</p>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div class="stat-item">
+                    <h3 class="text-primary mb-1">15+</h3>
+                    <p class="text-muted mb-0">Стран доставки</p>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div class="stat-item">
+                    <h3 class="text-primary mb-1">98%</h3>
+                    <p class="text-muted mb-0">Довольных клиентов</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Преимущества -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="bi bi-truck"></i>
+              </div>
+              <h5>Быстрая доставка</h5>
+              <p>Доставляем заказы за 1-3 дня</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h5>Гарантия качества</h5>
+              <p>Все книги от проверенных издательств</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="bi bi-percent"></i>
+              </div>
+              <h5>Выгодные цены</h5>
+              <p>Регулярные акции и скидки для постоянных клиентов</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h5>Поддержка 24/7</h5>
+              <p>Наша служба поддержки всегда готова помочь</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content text-center text-white">
+          <h2 class="cta-title mb-4">
+            Начните своё путешествие в мир книг сегодня!
+          </h2>
+          <p class="cta-text mb-4">
+            Присоединяйтесь к тысячам читателей, которые уже открыли для себя
+            магию чтения. Получите скидку 15% на первую покупку при подписке на
+            нашу рассылку.
+          </p>
+          <div class="cta-buttons">
+            <a href="catalog.html" class="btn btn-light btn-lg me-3">
+              <i class="bi bi-cart-check me-2"></i>Сделать заказ
+            </a>
+          </div>
+          <div class="cta-features mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-2 col-6">
+                <div class="feature-item">
+                  <i class="bi bi-truck"></i>
+                  <small>Бесплатная доставка от 50 руб.</small>
+                </div>
+              </div>
+              <div class="col-md-2 col-6">
+                <div class="feature-item">
+                  <i class="bi bi-shield-check"></i>
+                  <small>Гарантия качества</small>
+                </div>
+              </div>
+              <div class="col-md-2 col-6">
+                <div class="feature-item">
+                  <i class="bi bi-arrow-clockwise"></i>
+                  <small>Легкий возврат</small>
+                </div>
+              </div>
+              <div class="col-md-2 col-6">
+                <div class="feature-item">
+                  <i class="bi bi-headset"></i>
+                  <small>Поддержка 24/7</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-links">
+              <h5>Книжный магазин "Читай-Город"</h5>
+              <p>
+                Мы предлагаем широкий выбор книг различных жанров для всех
+                возрастов. Наша миссия - делать чтение доступным и приятным для
+                каждого.
+              </p>
+              <div class="social-links mt-4">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-links">
+              <h5>Магазин</h5>
+              <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="catalog.html">Новинки</a></li>
+                <li><a href="catalog.html">Бестселлеры</a></li>
+                <li><a href="catalog.html">Акции</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h5>Помощь</h5>
+              <ul>
+                <li><a href="about.html">Доставка и оплата</a></li>
+                <li><a href="about.html">Возврат товара</a></li>
+                <li><a href="about.html">Частые вопросы</a></li>
+                <li><a href="about.html">Контакты</a></li>
+                <li><a href="about.html">О нас</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-links">
+              <h5>Контакты</h5>
+              <ul>
+                <li>
+                  <i class="bi bi-geo-alt me-2"></i> г. Гродно, ул. Книжная, д.
+                  10
+                </li>
+                <li>
+                  <i class="bi bi-telephone me-2"></i> +375 (25) 456-78-90
+                </li>
+                <li>
+                  <i class="bi bi-envelope me-2"></i> info@chitai-gorod.ru
+                </li>
+              </ul>
+              <h5 class="mt-4">Подписка на новости</h5>
+              <div class="input-group mt-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Ваш email"
+                />
+                <button class="btn btn-primary" type="button">
+                  <i class="bi bi-send"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Книжный магазин "Читай-Город". Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
