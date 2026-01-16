@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Книжный магазин "Читай-Город" | Каталог</title>
+    <title>Книжный магазин "Мир книг" | Каталог</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link
@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-          <i class="bi bi-book-half me-2"></i>Читай-Город
+          <i class="bi bi-book-half me-2"></i>МИР КНИГ
         </a>
         <button
           class="navbar-toggler"
@@ -36,13 +36,28 @@
               <a class="nav-link active" href="catalog.html">Каталог</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="catalog.html">Новинки</a>
+              <a
+                class="nav-link"
+                href="catalog.html?section=new"
+                data-filter="section-new"
+                >Новинки</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="catalog.html">Бестселлеры</a>
+              <a
+                class="nav-link"
+                href="catalog.html?section=bestseller"
+                data-filter="section-bestseller"
+                >Бестселлеры</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="catalog.html">Акции</a>
+              <a
+                class="nav-link"
+                href="catalog.html?section=sale"
+                data-filter="section-sale"
+                >Акции</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">О нас</a>
@@ -141,12 +156,11 @@
                       class="form-check-input"
                       type="checkbox"
                       id="category1"
-                      checked
                     />
                     <label class="form-check-label" for="category1"
                       >Художественная литература</label
                     >
-                    <span class="text-muted">(324)</span>
+                    <span class="text-muted">(5)</span>
                   </div>
                   <div class="form-check">
                     <input
@@ -157,7 +171,7 @@
                     <label class="form-check-label" for="category2"
                       >Детективы</label
                     >
-                    <span class="text-muted">(156)</span>
+                    <span class="text-muted">(4)</span>
                   </div>
                   <div class="form-check">
                     <input
@@ -168,7 +182,7 @@
                     <label class="form-check-label" for="category3"
                       >Фантастика</label
                     >
-                    <span class="text-muted">(278)</span>
+                    <span class="text-muted">(5)</span>
                   </div>
                   <div class="form-check">
                     <input
@@ -179,7 +193,7 @@
                     <label class="form-check-label" for="category4"
                       >Бизнес-литература</label
                     >
-                    <span class="text-muted">(89)</span>
+                    <span class="text-muted">(3)</span>
                   </div>
                   <div class="form-check">
                     <input
@@ -190,7 +204,7 @@
                     <label class="form-check-label" for="category5"
                       >Детские книги</label
                     >
-                    <span class="text-muted">(215)</span>
+                    <span class="text-muted">(3)</span>
                   </div>
                   <div class="form-check">
                     <input
@@ -201,7 +215,7 @@
                     <label class="form-check-label" for="category6"
                       >Наука и образование</label
                     >
-                    <span class="text-muted">(142)</span>
+                    <span class="text-muted">(2)</span>
                   </div>
                 </div>
               </div>
@@ -257,6 +271,8 @@
                         class="form-control form-control-sm"
                         placeholder="От"
                         value="0"
+                        min="0"
+                        max="200"
                       />
                     </div>
                     <div class="col-6">
@@ -264,71 +280,16 @@
                         type="number"
                         class="form-control form-control-sm"
                         placeholder="До"
-                        value="100"
+                        value="200"
+                        min="0"
+                        max="200"
                       />
                     </div>
                   </div>
-                  <div class="mt-2">
-                    <input
-                      type="range"
-                      class="form-range"
-                      min="0"
-                      max="200"
-                      step="5"
-                      value="100"
-                    />
-                  </div>
                 </div>
               </div>
 
-              <!-- Фильтр по автору -->
-              <div class="filter-group">
-                <h6>Автор</h6>
-                <div class="filter-options">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="author1"
-                    />
-                    <label class="form-check-label" for="author1"
-                      >Анна Иванова</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="author2"
-                    />
-                    <label class="form-check-label" for="author2"
-                      >Петр Сидоров</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="author3"
-                    />
-                    <label class="form-check-label" for="author3"
-                      >Мария Козлова</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="author4"
-                    />
-                    <label class="form-check-label" for="author4"
-                      >Сергей Петров</label
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Фильтр по рейтингу -->
+              <!-- Фильтр по рейтингу 
               <div class="filter-group">
                 <h6>Рейтинг</h6>
                 <div class="filter-options">
@@ -376,7 +337,7 @@
                   </div>
                 </div>
               </div>
-
+-->
               <!-- Кнопка применения фильтров -->
               <button class="btn btn-primary w-100 mt-3">
                 Применить фильтры
@@ -423,13 +384,21 @@
                 </div>
               </div>
             </div>
-
-            <!-- Сетка книг -->
             <div class="books-grid" id="booksContainer">
               <!-- Книга 1 -->
-              <div class="book-card catalog-view">
+              <div
+                class="book-card catalog-view"
+                data-category="Художественная литература"
+                data-author="Анна Иванова"
+                data-rating="4"
+                data-new="true"
+              >
                 <div class="book-cover">
                   <img src="img/book.jpg" alt="Загадочный сад" />
+                  <span
+                    class="badge bg-success position-absolute top-0 start-0 m-2"
+                    >Новинка</span
+                  >
                 </div>
                 <div class="card-body">
                   <div class="rating mb-2">
@@ -452,17 +421,27 @@
                       <span class="price">45 руб.</span>
                       <small class="text-muted d-block"><s>60 руб.</s></small>
                     </div>
-                    <a href="book-details.html" class="btn btn-book">
-                      Просмотреть
-                    </a>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
                   </div>
                 </div>
               </div>
 
               <!-- Книга 2 -->
-              <div class="book-card catalog-view">
+              <div
+                class="book-card catalog-view"
+                data-category="Фантастика"
+                data-author="Петр Сидоров"
+                data-rating="4"
+                data-bestseller="true"
+              >
                 <div class="book-cover">
                   <img src="img/book.jpg" alt="Путешествие во времени" />
+                  <span
+                    class="badge bg-warning position-absolute top-0 start-0 m-2"
+                    >Бестселлер</span
+                  >
                 </div>
                 <div class="card-body">
                   <div class="rating mb-2">
@@ -484,17 +463,27 @@
                     <div>
                       <span class="price">52 руб.</span>
                     </div>
-                    <a href="book-details.html" class="btn btn-book">
-                      Просмотреть
-                    </a>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
                   </div>
                 </div>
               </div>
 
               <!-- Книга 3 -->
-              <div class="book-card catalog-view">
+              <div
+                class="book-card catalog-view"
+                data-category="Бизнес-литература"
+                data-author="Мария Козлова"
+                data-rating="5"
+                data-sale="true"
+              >
                 <div class="book-cover">
                   <img src="img/book.jpg" alt="Искусство переговоров" />
+                  <span
+                    class="badge bg-danger position-absolute top-0 start-0 m-2"
+                    >-20%</span
+                  >
                 </div>
                 <div class="card-body">
                   <div class="rating mb-2">
@@ -517,17 +506,27 @@
                       <span class="price">68 руб.</span>
                       <small class="text-muted d-block"><s>85 руб.</s></small>
                     </div>
-                    <a href="book-details.html" class="btn btn-book">
-                      Просмотреть
-                    </a>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
                   </div>
                 </div>
               </div>
 
               <!-- Книга 4 -->
-              <div class="book-card catalog-view">
+              <div
+                class="book-card catalog-view"
+                data-category="Детективы"
+                data-author="Дмитрий Орлов"
+                data-rating="4"
+                data-bestseller="true"
+              >
                 <div class="book-cover">
                   <img src="img/book.jpg" alt="Город теней" />
+                  <span
+                    class="badge bg-warning position-absolute top-0 start-0 m-2"
+                    >Бестселлер</span
+                  >
                 </div>
                 <div class="card-body">
                   <div class="rating mb-2">
@@ -549,17 +548,27 @@
                     <div>
                       <span class="price">59 руб.</span>
                     </div>
-                    <a href="book-details.html" class="btn btn-book">
-                      Просмотреть
-                    </a>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
                   </div>
                 </div>
               </div>
 
               <!-- Книга 5 -->
-              <div class="book-card catalog-view">
+              <div
+                class="book-card catalog-view"
+                data-category="Детективы"
+                data-author="Сергей Петров"
+                data-rating="4"
+                data-new="true"
+              >
                 <div class="book-cover">
                   <img src="img/book.jpg" alt="Тайна старого замка" />
+                  <span
+                    class="badge bg-success position-absolute top-0 start-0 m-2"
+                    >Новинка</span
+                  >
                 </div>
                 <div class="card-body">
                   <div class="rating mb-2">
@@ -573,7 +582,7 @@
                   <h5 class="card-title">Тайна старого замка</h5>
                   <p class="author text-muted">Сергей Петров</p>
                   <p class="card-text text-truncate-2">
-                    Детективная история с неожиданной развязкой
+                    Загадочная история, полная неожиданных поворотов
                   </p>
                   <div
                     class="d-flex justify-content-between align-items-center mt-3"
@@ -581,17 +590,27 @@
                     <div>
                       <span class="price">59 руб.</span>
                     </div>
-                    <a href="book-details.html" class="btn btn-book">
-                      Просмотреть
-                    </a>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
                   </div>
                 </div>
               </div>
 
               <!-- Книга 6 -->
-              <div class="book-card catalog-view">
+              <div
+                class="book-card catalog-view"
+                data-category="Бизнес-литература"
+                data-author="Алексей Воронов"
+                data-rating="4"
+                data-sale="true"
+              >
                 <div class="book-cover">
                   <img src="img/book.jpg" alt="Путь к успеху" />
+                  <span
+                    class="badge bg-danger position-absolute top-0 start-0 m-2"
+                    >-15%</span
+                  >
                 </div>
                 <div class="card-body">
                   <div class="rating mb-2">
@@ -612,18 +631,29 @@
                   >
                     <div>
                       <span class="price">72 руб.</span>
+                      <small class="text-muted d-block"><s>85 руб.</s></small>
                     </div>
-                    <a href="book-details.html" class="btn btn-book">
-                      Просмотреть
-                    </a>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
                   </div>
                 </div>
               </div>
 
               <!-- Книга 7 -->
-              <div class="book-card catalog-view">
+              <div
+                class="book-card catalog-view"
+                data-category="Художественная литература"
+                data-author="Елена Смирнова"
+                data-rating="5"
+                data-bestseller="true"
+              >
                 <div class="book-cover">
                   <img src="img/book.jpg" alt="Город мечты" />
+                  <span
+                    class="badge bg-warning position-absolute top-0 start-0 m-2"
+                    >Бестселлер</span
+                  >
                 </div>
                 <div class="card-body">
                   <div class="rating mb-2">
@@ -646,17 +676,27 @@
                       <span class="price">48 руб.</span>
                       <small class="text-muted d-block"><s>65 руб.</s></small>
                     </div>
-                    <a href="book-details.html" class="btn btn-book">
-                      Просмотреть
-                    </a>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
                   </div>
                 </div>
               </div>
 
               <!-- Книга 8 -->
-              <div class="book-card catalog-view">
+              <div
+                class="book-card catalog-view"
+                data-category="Фантастика"
+                data-author="Михаил Волков"
+                data-rating="4"
+                data-new="true"
+              >
                 <div class="book-cover">
                   <img src="img/book.jpg" alt="Код вселенной" />
+                  <span
+                    class="badge bg-success position-absolute top-0 start-0 m-2"
+                    >Новинка</span
+                  >
                 </div>
                 <div class="card-body">
                   <div class="rating mb-2">
@@ -678,14 +718,690 @@
                     <div>
                       <span class="price">65 руб.</span>
                     </div>
-                    <a href="book-details.html" class="btn btn-book">
-                      Просмотреть
-                    </a>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 9 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Детские книги"
+                data-author="Ольга Зайцева"
+                data-rating="5"
+                data-bestseller="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Приключения в сказочном лесу" />
+                  <span
+                    class="badge bg-warning position-absolute top-0 start-0 m-2"
+                    >Бестселлер</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span class="text-muted ms-1">(312)</span>
+                  </div>
+                  <h5 class="card-title">Приключения в сказочном лесу</h5>
+                  <p class="author text-muted">Ольга Зайцева</p>
+                  <p class="card-text text-truncate-2">
+                    Волшебная история для детей дошкольного возраста
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">35 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 10 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Наука и образование"
+                data-author="Андрей Николаев"
+                data-rating="4"
+                data-sale="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Основы программирования" />
+                  <span
+                    class="badge bg-danger position-absolute top-0 start-0 m-2"
+                    >-25%</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <span class="text-muted ms-1">(187)</span>
+                  </div>
+                  <h5 class="card-title">Основы программирования</h5>
+                  <p class="author text-muted">Андрей Николаев</p>
+                  <p class="card-text text-truncate-2">
+                    Подробное руководство для начинающих программистов
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">89 руб.</span>
+                      <small class="text-muted d-block"><s>120 руб.</s></small>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 11 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Художественная литература"
+                data-author="Татьяна Морозова"
+                data-rating="3"
+                data-new="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Белые ночи" />
+                  <span
+                    class="badge bg-success position-absolute top-0 start-0 m-2"
+                    >Новинка</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <span class="text-muted ms-1">(76)</span>
+                  </div>
+                  <h5 class="card-title">Белые ночи</h5>
+                  <p class="author text-muted">Татьяна Морозова</p>
+                  <p class="card-text text-truncate-2">
+                    Лирическая повесть о любви и одиночестве
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">42 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 12 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Фантастика"
+                data-author="Владимир Соколов"
+                data-rating="4"
+                data-bestseller="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Галактические войны" />
+                  <span
+                    class="badge bg-warning position-absolute top-0 start-0 m-2"
+                    >Бестселлер</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                    <span class="text-muted ms-1">(245)</span>
+                  </div>
+                  <h5 class="card-title">Галактические войны</h5>
+                  <p class="author text-muted">Владимир Соколов</p>
+                  <p class="card-text text-truncate-2">
+                    Эпическая сага о межзвездных конфликтах
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">75 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 13 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Детективы"
+                data-author="Ирина Ковалева"
+                data-rating="5"
+                data-sale="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Убийство в библиотеке" />
+                  <span
+                    class="badge bg-danger position-absolute top-0 start-0 m-2"
+                    >-30%</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span class="text-muted ms-1">(198)</span>
+                  </div>
+                  <h5 class="card-title">Убийство в библиотеке</h5>
+                  <p class="author text-muted">Ирина Ковалева</p>
+                  <p class="card-text text-truncate-2">
+                    Интеллектуальный детектив с блестящей развязкой
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">55 руб.</span>
+                      <small class="text-muted d-block"><s>79 руб.</s></small>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 14 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Бизнес-литература"
+                data-author="Денис Попов"
+                data-rating="4"
+                data-new="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Стартап с нуля" />
+                  <span
+                    class="badge bg-success position-absolute top-0 start-0 m-2"
+                    >Новинка</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <span class="text-muted ms-1">(89)</span>
+                  </div>
+                  <h5 class="card-title">Стартап с нуля</h5>
+                  <p class="author text-muted">Денис Попов</p>
+                  <p class="card-text text-truncate-2">
+                    Практическое руководство для начинающих предпринимателей
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">95 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 15 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Детские книги"
+                data-author="Надежда Васнецова"
+                data-rating="5"
+                data-bestseller="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Веселые истории про животных" />
+                  <span
+                    class="badge bg-warning position-absolute top-0 start-0 m-2"
+                    >Бестселлер</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span class="text-muted ms-1">(267)</span>
+                  </div>
+                  <h5 class="card-title">Веселые истории про животных</h5>
+                  <p class="author text-muted">Надежда Васнецова</p>
+                  <p class="card-text text-truncate-2">
+                    Добрые и смешные рассказы для детей младшего возраста
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">38 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 16 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Наука и образование"
+                data-author="Павел Григорьев"
+                data-rating="3"
+                data-sale="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="История искусств" />
+                  <span
+                    class="badge bg-danger position-absolute top-0 start-0 m-2"
+                    >-20%</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <span class="text-muted ms-1">(124)</span>
+                  </div>
+                  <h5 class="card-title">История искусств</h5>
+                  <p class="author text-muted">Павел Григорьев</p>
+                  <p class="card-text text-truncate-2">
+                    Обзор мирового искусства от древности до наших дней
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">120 руб.</span>
+                      <small class="text-muted d-block"><s>150 руб.</s></small>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 17 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Художественная литература"
+                data-author="Константин Белов"
+                data-rating="4"
+                data-new="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Последний поезд" />
+                  <span
+                    class="badge bg-success position-absolute top-0 start-0 m-2"
+                    >Новинка</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                    <span class="text-muted ms-1">(92)</span>
+                  </div>
+                  <h5 class="card-title">Последний поезд</h5>
+                  <p class="author text-muted">Константин Белов</p>
+                  <p class="card-text text-truncate-2">
+                    Драматическая история о судьбах людей в военное время
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">51 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 18 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Фантастика"
+                data-author="Евгений Марков"
+                data-rating="5"
+                data-bestseller="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Империя роботов" />
+                  <span
+                    class="badge bg-warning position-absolute top-0 start-0 m-2"
+                    >Бестселлер</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span class="text-muted ms-1">(178)</span>
+                  </div>
+                  <h5 class="card-title">Империя роботов</h5>
+                  <p class="author text-muted">Евгений Марков</p>
+                  <p class="card-text text-truncate-2">
+                    Антиутопия о мире, где машины правят людьми
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">63 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 19 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Детективы"
+                data-author="Виктор Новиков"
+                data-rating="4"
+                data-sale="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Дело о пропавшем алмазе" />
+                  <span
+                    class="badge bg-danger position-absolute top-0 start-0 m-2"
+                    >-15%</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <span class="text-muted ms-1">(145)</span>
+                  </div>
+                  <h5 class="card-title">Дело о пропавшем алмазе</h5>
+                  <p class="author text-muted">Виктор Новиков</p>
+                  <p class="card-text text-truncate-2">
+                    Классический детектив в стиле Агаты Кристи
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">47 руб.</span>
+                      <small class="text-muted d-block"><s>55 руб.</s></small>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 20 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Бизнес-литература"
+                data-author="Оксана Федорова"
+                data-rating="5"
+                data-new="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Лидерство нового времени" />
+                  <span
+                    class="badge bg-success position-absolute top-0 start-0 m-2"
+                    >Новинка</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span class="text-muted ms-1">(103)</span>
+                  </div>
+                  <h5 class="card-title">Лидерство нового времени</h5>
+                  <p class="author text-muted">Оксана Федорова</p>
+                  <p class="card-text text-truncate-2">
+                    Современные подходы к управлению командами
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">110 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 21 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Детские книги"
+                data-author="Светлана Романова"
+                data-rating="4"
+                data-bestseller="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Принцесса и дракон" />
+                  <span
+                    class="badge bg-warning position-absolute top-0 start-0 m-2"
+                    >Бестселлер</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <span class="text-muted ms-1">(189)</span>
+                  </div>
+                  <h5 class="card-title">Принцесса и дракон</h5>
+                  <p class="author text-muted">Светлана Романова</p>
+                  <p class="card-text text-truncate-2">
+                    Сказка о дружбе, храбрости и волшебстве
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">32 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 22 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Наука и образование"
+                data-author="Артем Семенов"
+                data-rating="4"
+                data-sale="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Психология общения" />
+                  <span
+                    class="badge bg-danger position-absolute top-0 start-0 m-2"
+                    >-10%</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                    <span class="text-muted ms-1">(156)</span>
+                  </div>
+                  <h5 class="card-title">Психология общения</h5>
+                  <p class="author text-muted">Артем Семенов</p>
+                  <p class="card-text text-truncate-2">
+                    Как строить эффективные отношения с людьми
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">81 руб.</span>
+                      <small class="text-muted d-block"><s>90 руб.</s></small>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 23 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Художественная литература"
+                data-author="Людмила Павлова"
+                data-rating="3"
+                data-new="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Ветер перемен" />
+                  <span
+                    class="badge bg-success position-absolute top-0 start-0 m-2"
+                    >Новинка</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <i class="bi bi-star text-warning"></i>
+                    <span class="text-muted ms-1">(67)</span>
+                  </div>
+                  <h5 class="card-title">Ветер перемен</h5>
+                  <p class="author text-muted">Людмила Павлова</p>
+                  <p class="card-text text-truncate-2">
+                    История о переменах в жизни обычной женщины
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">44 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Книга 24 -->
+              <div
+                class="book-card catalog-view"
+                data-category="Фантастика"
+                data-author="Григорий Лебедев"
+                data-rating="5"
+                data-bestseller="true"
+              >
+                <div class="book-cover">
+                  <img src="img/book.jpg" alt="Хроники параллельных миров" />
+                  <span
+                    class="badge bg-warning position-absolute top-0 start-0 m-2"
+                    >Бестселлер</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="rating mb-2">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span class="text-muted ms-1">(221)</span>
+                  </div>
+                  <h5 class="card-title">Хроники параллельных миров</h5>
+                  <p class="author text-muted">Григорий Лебедев</p>
+                  <p class="card-text text-truncate-2">
+                    Эпическое фэнтези о путешествиях между измерениями
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-3"
+                  >
+                    <div>
+                      <span class="price">78 руб.</span>
+                    </div>
+                    <a href="book-details.html" class="btn btn-book"
+                      >Просмотреть</a
+                    >
                   </div>
                 </div>
               </div>
             </div>
-
             <!-- Пагинация -->
             <nav aria-label="Page navigation" class="mt-5">
               <ul class="pagination justify-content-center">
@@ -695,9 +1411,8 @@
                 <li class="page-item active">
                   <a class="page-link" href="#">1</a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
+             
+                <li class="page-item disabled">
                   <a class="page-link" href="#">Следующая</a>
                 </li>
               </ul>
@@ -713,7 +1428,7 @@
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
             <div class="footer-links">
-              <h5>Книжный магазин "Читай-Город"</h5>
+              <h5>Книжный магазин "Мир книг"</h5>
               <p>
                 Мы предлагаем широкий выбор книг различных жанров для всех
                 возрастов. Наша миссия - делать чтение доступным и приятным для
@@ -781,7 +1496,7 @@
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2025 Книжный магазин "Читай-Город". Все права защищены.</p>
+          <p>&copy; 2025 Книжный магазин "Мир книг". Все права защищены.</p>
         </div>
       </div>
     </footer>
